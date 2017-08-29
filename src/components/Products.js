@@ -4,18 +4,14 @@ import ProductItem from './ProductItem';
 import { PRODUCTS } from '../actions/types';
 
 const Products = ({ filter }) => {
-	const rows = [];
-
-	PRODUCTS.forEach(p => {
+	const rows = PRODUCTS.filter(p => {
 		const nameLC = p.name.toLowerCase();
 		const filterLC = filter.toLowerCase();
 
-		if (nameLC.indexOf(filterLC) !== -1) {
-			rows.push(
-				<ProductItem key={p.name} data={p} />
-			);
-		}
-	});
+		return nameLC.indexOf(filterLC) !== -1;
+	}).map(p =>
+		<ProductItem key={p.name} data={p} />
+	);
 
 	return <div>{rows}</div>;
 };

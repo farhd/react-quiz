@@ -44,5 +44,3 @@ describe('>>> R E D U C E R S <<<',()=>{
 		expect(state).toEqual({filter:'',counter:0,order:{steps:[{label:{key:'Step 1'},current:true,completed:true},{label:{key:'Step 2'},current:false,completed:false},{label:{key:'Step 3'},current:false,completed:false},{label:{key:'Delivery'},current:false,completed:false},{label:{key:'Review'},current:false,completed:false},{label:{key:'Confirmation'},current:false,completed:false}],currentStepIndex:0}});
 	});
 });
-//*******************************************************************************************************
-

@@ -23,11 +23,11 @@
     "webpack",
     "hmr",
     "jest"
-	],
-	"repository": {
+  ],
+  "repository": {
     "type": "git",
     "url": "https://github.com/farhd/react-quiz.git"
-	},
+  },
   "author": "Farhad Abdullayev",
   "license": "MIT",
   "dependencies": {

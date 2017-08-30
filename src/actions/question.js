@@ -1,6 +1,6 @@
 import * as types from './types';
 
-export function createOrder() {
+export function createQuestions() {
 	return {
 		type: types.CREATE_ORDER
 	};

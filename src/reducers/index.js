@@ -1,12 +1,8 @@
 import { combineReducers } from 'redux';
-import filter from './filter.js';
-import counter from './counter.js';
-import order from './order.js';
+import question from './question.js';
 
 const rootReducer = combineReducers({
-	filter,
-	counter,
-	order
+	question
 });
 
 export default rootReducer;

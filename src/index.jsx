@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { configureStore } from './store/configureStore';
 import Root from './containers/Root';
-import { createOrder } from './actions/order.js';
+import { createQuestions } from './actions/question.js';
 
 
 const initialState = {
@@ -14,7 +14,7 @@ const initialState = {
 
 const store = configureStore(initialState);
 // create order
-store.dispatch(createOrder());
+store.dispatch(createQuestions());
 
 render(
 	<AppContainer>

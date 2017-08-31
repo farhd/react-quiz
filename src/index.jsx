@@ -3,18 +3,8 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { configureStore } from './store/configureStore';
 import Root from './containers/Root';
-import { createQuestions } from './actions/question.js';
 
-
-const initialState = {
-	order: [],
-	counter: 0,
-	filter: ''
-};
-
-const store = configureStore(initialState);
-// create order
-store.dispatch(createQuestions());
+const store = configureStore();
 
 render(
 	<AppContainer>

@@ -33,7 +33,8 @@ export class Main extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		...state
+		...state,
+		questions: state.questions.questions
 	};
 };
 

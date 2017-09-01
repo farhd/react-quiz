@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Checkbox from './Checkbox';
+import Choice from './Choice';
 
 const QuestionItem = ({ data }) => {
-	const options = data.options.map((item, i) =>
-		<Checkbox key={i} data={{'id': data.id, 'label': item}} />
-	);
+	const options = data.options.map((item, i) => {
+		const id = ''.concat(String(data.id), String(i));
+		return <Choice key={i} data={ {cId: id, qId: data.id, 'label': item} } />;
+	});
 
 	return (
 		<div>

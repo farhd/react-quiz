@@ -5,7 +5,7 @@ const INITIAL_STATE = {
 	questions: [],
 };
 
-export default function(state = INITIAL_STATE, action) {
+export default function questions(state = INITIAL_STATE, action) {
 	switch (action.type) {
 		case types.CREATE_QUESTIONS:
 			return {
@@ -18,9 +18,7 @@ export default function(state = INITIAL_STATE, action) {
 }
 
 function generateQuestions() {
-	console.log('creating q"s');
-
-	return R.range(1, 8).map(num => {
+	return R.range(1, 9).map(num => {
 		return {
 			'id': num,
 			'question': `Question ${num}`,

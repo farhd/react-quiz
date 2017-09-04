@@ -4,8 +4,15 @@ import Choice from './Choice';
 
 const QuestionItem = ({ data }) => {
 	const options = data.options.map((item, i) => {
-		const id = ''.concat(String(data.id), String(i));
-		return <Choice key={i} data={ {cId: id, qId: data.id, 'label': item} } />;
+		const cId = ''.concat(String(data.id), String(i));
+		const qId = data.id;
+		return <Choice key={i} data={{
+			cId,
+			qId,
+			label: item,
+			i,
+			checked: data.userChoice === i
+		}} />;
 	});
 
 	return (

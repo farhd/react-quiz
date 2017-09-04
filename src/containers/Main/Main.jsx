@@ -25,6 +25,8 @@ export class Main extends Component {
 			<div className={styles.content + ' ' + styles.wrapper}>
 				<div className={styles['content--wrap']}>
 					<QuestionList data={this.props.questions} />
+
+					<button>Submit</button>
 				</div>
 			</div>
 		);
@@ -33,8 +35,7 @@ export class Main extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		...state,
-		questions: state.questions.questions
+		...state
 	};
 };
 

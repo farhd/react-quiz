@@ -1,6 +1,7 @@
 import createHistory from 'history/createBrowserHistory';
 import { applyMiddleware, createStore, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
+import logger from 'redux-logger';
 import rootReducer from '../reducers';
 export const history = createHistory();
 
@@ -12,7 +13,8 @@ export function configureStore(initialState) {
 		rootReducer,
 		initialState,
 		composeEnhancers(
-			applyMiddleware(middleware)
+			applyMiddleware(middleware),
+			applyMiddleware(logger)
 		)
 	);
 

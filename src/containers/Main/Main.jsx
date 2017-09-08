@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { Component }  from 'react';
 import { connect } from 'react-redux';
+import {
+	Link
+} from 'react-router-dom';
+
 import { createQuestions, submitQuestions } from '../../actions';
 // import * as actionCreators from './actionCreator
 import QuestionList from '../../components/QuestionList';
@@ -17,7 +21,9 @@ export class Main extends Component {
 	}
 
 	componentDidMount() {
-		this.props.createQuestions();
+		if (this.props.questions.length === 0) {
+			this.props.createQuestions();
+		}
 	}
 
 	submitAnswers() {
@@ -29,12 +35,14 @@ export class Main extends Component {
 
 	render() {
 		return (
-			<div className={styles.content + ' ' + styles.wrapper}>
-				<div className={styles['content--wrap']}>
-					<QuestionList data={this.props.questions} />
+			<div className={styles['content--wrap']}>
+				<QuestionList data={this.props.questions} />
 
-					<button onClick={this.submitAnswers.bind(this)}>Submit</button>
-				</div>
+				<button onClick={this.submitAnswers.bind(this)}>
+					<Link to="/result">
+						Submit
+					</Link>
+				</button>
 			</div>
 		);
 	}

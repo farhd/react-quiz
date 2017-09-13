@@ -20,7 +20,7 @@ export class Choice extends Component {
 					onChange={this.props.answerQuestion.bind(this, data.qId, data.i)}
 					type="radio"
 					checked={data.checked ? 'checked' : ''} />
-				<label htmlFor={data.cId}>{data.label}</label>
+				<label htmlFor={data.cId} className="checkable">{data.label}</label>
 			</span>
 		);
 	}

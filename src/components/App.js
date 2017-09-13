@@ -11,10 +11,10 @@ import Result from './Result';
 const styles = require('../styles/app.scss');
 
 const App = () =>
-	<div className={styles.container}>
+	<div>
 		<Header />
 
-		<div className={styles.content + ' ' + styles.wrapper}>
+		<div className="flex two-500 center t-center">
 			<Route exact path="/" component={Main} />
 			<Route path="/result" component={Result} />
 		</div>

@@ -36,14 +36,15 @@ export class Main extends Component {
 
 	render() {
 		return (
-			<div className={styles['content--wrap']}>
+			<div>
 				<QuestionList data={this.props.questions} />
-
-				<button onClick={this.submitAnswers.bind(this)}>
-					<Link to="/result">
-						Submit
-					</Link>
-				</button>
+				<br />
+				<Link
+					to="/result"
+					onClick={this.submitAnswers.bind(this)}
+					className="button">
+					Submit
+				</Link>
 			</div>
 		);
 	}

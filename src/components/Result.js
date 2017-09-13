@@ -20,22 +20,25 @@ class Result extends Component {
 	render() {
 		const { correct, unanswered } = this.props.result;
 		return (
-			<div>
+			<div className="flex one center">
 				<strong>Result:</strong>
 				<div>Correct: {correct}</div>
 				<div>Unanswered: {unanswered}</div>
-				<hr />
-				<button onClick={this.handleReset.bind(this)}>
-					<Link to="/">
+
+				<div className="flex four-700 center">
+					<Link
+						to="/"
+						onClick={this.handleReset.bind(this)}
+						className="button">
 						Try again
 					</Link>
-				</button>
-				<span>or</span>
-				<button>
-					<Link to="/">
+
+					<span className="flex half-700 center">or</span>
+
+					<Link to="/" className="button">
 						Review answers
 					</Link>
-				</button>
+				</div>
 			</div>
 		);
 	}

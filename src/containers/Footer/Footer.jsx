@@ -3,12 +3,15 @@ const styles = require('../../styles/app.scss');
 
 const Footer = () => {
 	return (
-		<footer>
-			<div className={styles.wrapper}>
-				<p>
-					<a target="_blank" href="https://github.com/farhd/react-quiz">Github</a>
-				</p>
-			</div>
+		<footer className="t-center">
+			<hr />
+			<h2>
+				<a
+					target="_blank"
+					href="https://github.com/farhd/react-quiz">
+					Github
+				</a>
+				</h2>
 		</footer>
 	);
 };

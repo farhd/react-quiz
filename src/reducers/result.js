@@ -23,6 +23,9 @@ export default function result(state = initialState, action) {
 				unanswered,
 			};
 
+		case types.RESET_QUESTIONS:
+			return initialState;
+
 		default:
 			return state;
 	}

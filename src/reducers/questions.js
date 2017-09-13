@@ -15,6 +15,11 @@ export default function questions(state = [], action) {
 			);
 			return newState;
 
+		case types.RESET_QUESTIONS:
+			return state.map((item) =>
+				R.merge({...item}, {userChoice: null})
+			);
+
 		default:
 			return state;
 	}

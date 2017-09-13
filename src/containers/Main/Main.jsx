@@ -13,6 +13,7 @@ const styles = require('../../styles/app.scss');
 export class Main extends Component {
 	static propTypes = {
 		createQuestions: PropTypes.func,
+		submitQuestions: PropTypes.func,
 		questions: PropTypes.array
 	};
 

@@ -5,8 +5,8 @@ import { answerQuestion } from '../actions/';
 
 export class Choice extends Component {
 	static propTypes = {
-		data: PropTypes.object,
-		answerQuestion: PropTypes.func
+		data: PropTypes.object.isRequired,
+		answerQuestion: PropTypes.func.isRequired
 	};
 
 	render() {

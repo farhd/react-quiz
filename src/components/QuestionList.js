@@ -11,7 +11,7 @@ const QuestionList = ({ data = [] }) => {
 };
 
 QuestionList.propTypes = {
-	data: PropTypes.array
+	data: PropTypes.array.isRequired
 };
 
 export default QuestionList;

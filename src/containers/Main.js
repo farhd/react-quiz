@@ -5,16 +5,15 @@ import {
 	Link
 } from 'react-router-dom';
 
-import { createQuestions, submitQuestions } from '../../actions';
+import { createQuestions, submitQuestions } from '../actions';
 // import * as actionCreators from './actionCreator
-import QuestionList from '../../components/QuestionList';
-const styles = require('../../styles/app.scss');
+import QuestionList from '../components/QuestionList';
 
 export class Main extends Component {
 	static propTypes = {
-		createQuestions: PropTypes.func,
-		submitQuestions: PropTypes.func,
-		questions: PropTypes.array
+		createQuestions: PropTypes.func.isRequired,
+		submitQuestions: PropTypes.func.isRequired,
+		questions: PropTypes.array.isRequired
 	};
 
 	constructor() {

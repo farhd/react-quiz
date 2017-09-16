@@ -6,7 +6,11 @@ import { resetQuestions } from '../actions';
 
 class Result extends Component {
 	static propTypes = {
-		resetQuestions: PropTypes.func
+		resetQuestions: PropTypes.func.isRequired,
+		result: PropTypes.shape({
+			correct: PropTypes.number.isRequired,
+			unanswered: PropTypes.number.isRequired
+		}).isRequired
 	};
 
 	constructor() {

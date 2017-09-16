@@ -24,7 +24,7 @@ const QuestionItem = ({ data }) => {
 };
 
 QuestionItem.propTypes = {
-	data: PropTypes.object
+	data: PropTypes.object.isRequired
 };
 
 export default QuestionItem;

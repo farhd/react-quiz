@@ -1,5 +1,4 @@
 import * as types from '../actions/types';
-import * as R from 'ramda';
 
 const initialState = {
 	correct: 0,

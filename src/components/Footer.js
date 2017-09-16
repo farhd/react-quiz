@@ -1,5 +1,4 @@
 import React from 'react';
-const styles = require('../../styles/app.scss');
 
 const Footer = () => {
 	return (
@@ -11,7 +10,7 @@ const Footer = () => {
 					href="https://github.com/farhd/react-quiz">
 					Github
 				</a>
-				</h2>
+			</h2>
 		</footer>
 	);
 };

@@ -1,14 +1,13 @@
 import React from 'react';
 import {
 	Route,
-	Link
 } from 'react-router-dom';
 
-import Header from '../containers/Header';
-import Main from '../containers/Main';
-import Footer from '../containers/Footer';
-import Result from './Result';
-const styles = require('../styles/app.scss');
+import Main from './Main';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Result from '../components/Result';
+require('../styles/app.scss');
 
 const App = () =>
 	<div>

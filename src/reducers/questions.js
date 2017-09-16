@@ -6,20 +6,6 @@ export default function questions(state = [], action) {
 		case types.CREATE_QUESTIONS:
 			return state.concat(generateQuestions());
 
-		case types.ANSWER_QUESTION:
-			const index = R.findIndex(R.propEq('id', action.qId))(state);
-			const newState = state.map((item, i) =>
-				i === index
-					? R.merge({...item}, {userChoice: action.cId})
-					: item
-			);
-			return newState;
-
-		case types.RESET_QUESTIONS:
-			return state.map((item) =>
-				R.merge({...item}, {userChoice: null})
-			);
-
 		default:
 			return state;
 	}

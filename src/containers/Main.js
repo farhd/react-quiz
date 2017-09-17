@@ -27,16 +27,6 @@ export class Main extends Component {
 		}
 	}
 
-	submitAnswers() {
-		const correctAnswers = this.props.questions.map(
-			item => item.correctChoice
-		);
-		this.props.getResult(
-			this.props.answers,
-			correctAnswers
-		);
-	}
-
 	render() {
 		return (
 			<div>
@@ -44,7 +34,6 @@ export class Main extends Component {
 				<br />
 				<Link
 					to="/result"
-					onClick={this.submitAnswers.bind(this)}
 					className="button">
 					Submit
 				</Link>

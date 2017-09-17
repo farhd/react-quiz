@@ -14,9 +14,9 @@ export function answerQuestion(qId, cId) {
 	};
 }
 
-export function submitQuestions(answers) {
+export function getResult(answers) {
 	return {
-		type: types.SUBMIT_QUESTIONS,
+		type: types.GET_RESULT,
 		answers
 	};
 }

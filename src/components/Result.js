@@ -9,7 +9,7 @@ class Result extends Component {
 		resetQuestions: PropTypes.func.isRequired,
 		result: PropTypes.shape({
 			correct: PropTypes.number.isRequired,
-			unanswered: PropTypes.number.isRequired
+			answered: PropTypes.number.isRequired
 		}).isRequired
 	};
 
@@ -22,12 +22,12 @@ class Result extends Component {
 	}
 
 	render() {
-		const { correct, unanswered } = this.props.result;
+		const { correct, answered } = this.props.result;
 		return (
 			<div className="flex one center">
 				<strong>Result:</strong>
 				<div>Correct: {correct}</div>
-				<div>Unanswered: {unanswered}</div>
+				<div>Answered: {answered}</div>
 
 				<div className="flex four-700 center">
 					<Link

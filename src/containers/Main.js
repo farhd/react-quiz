@@ -5,15 +5,16 @@ import {
 	Link
 } from 'react-router-dom';
 
-import { createQuestions, submitQuestions } from '../actions';
+import { createQuestions, getResult } from '../actions';
 // import * as actionCreators from './actionCreator
 import QuestionList from '../components/QuestionList';
 
 export class Main extends Component {
 	static propTypes = {
 		createQuestions: PropTypes.func.isRequired,
-		submitQuestions: PropTypes.func.isRequired,
-		questions: PropTypes.array.isRequired
+		getResult: PropTypes.func.isRequired,
+		questions: PropTypes.array.isRequired,
+		answers: PropTypes.object.isRequired
 	};
 
 	constructor() {
@@ -27,10 +28,13 @@ export class Main extends Component {
 	}
 
 	submitAnswers() {
-		const answers = this.props.questions.map(item =>
-			item.userChoice === null ? null : item.userChoice === item.correctChoice
+		const correctAnswers = this.props.questions.map(
+			item => item.correctChoice
 		);
-		this.props.submitQuestions(answers);
+		this.props.getResult(
+			this.props.answers,
+			correctAnswers
+		);
 	}
 
 	render() {
@@ -57,5 +61,5 @@ const mapStateToProps = (state) => {
 
 export default connect( mapStateToProps, {
 	createQuestions,
-	submitQuestions
+	getResult
 } )(Main);

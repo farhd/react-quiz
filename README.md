@@ -7,7 +7,15 @@ based on [react-redux-jest-kit](https://github.com/trembacz/react-redux-jest-kit
 
 ```bash
 git clone git@github.com:farhd/react-quiz.git
+```
+or
+```bash
+git clone https://github.com/farhd/react-quiz.git
+```
+then
+```bash
 cd react-quiz
+npm i && npm run start
 ```
 
 **2. Install all of the dependencies:**

@@ -8,13 +8,14 @@ const initialState = {
 
 export default function result(state = initialState, action) {
 	switch (action.type) {
-		case types.GET_RESULT:
-			const { correctAnswers, userAnswers } = action;
-			const answered = Object.keys(userAnswers).length;
-			const correct = R.filter(item => item === true, userAnswers);
+		case types.UPDATE_RESULT:
+			const { answers } = action;
+			const answered = Object.keys(answers).length;
+			const correctObjects = R.filter(item => item.isCorrect === true, answers);
+			const correct = Object.keys(correctObjects).length;
 
 			return {
-				correct: 0,
+				correct,
 				answered
 			};
 

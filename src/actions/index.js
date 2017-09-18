@@ -6,18 +6,26 @@ export function createQuestions() {
 	};
 }
 
-export function answerQuestion(qId, cId) {
+export function answerQuestion(qId, cId, isCorrect) {
 	return {
 		type: types.ANSWER_QUESTION,
 		qId,
-		cId
+		cId,
+		isCorrect
 	};
 }
 
-export function getResult(answers) {
+export function updateResult(answers) {
 	return {
-		type: types.GET_RESULT,
+		type: types.UPDATE_RESULT,
 		answers
+	};
+}
+
+export function answerAndCheck(qId, cId, isCorrect) {
+	return (dispatch, getState) => {
+		dispatch(answerQuestion(qId, cId, isCorrect));
+		return dispatch(updateResult(getState().answers));
 	};
 }
 

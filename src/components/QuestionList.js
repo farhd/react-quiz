@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import QuestionItem from './QuestionItem';
+import QuestionItem from '../containers/QuestionItem';
 
 const QuestionList = ({ data = [] }) => {
 	const questions = data.map((item, i) =>

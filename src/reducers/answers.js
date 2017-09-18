@@ -5,10 +5,13 @@ const initialState = {};
 export default function result(state = initialState, action) {
 	switch (action.type) {
 		case types.ANSWER_QUESTION:
-			const { qId, cId } = action;
+			const { qId, cId, isCorrect } = action;
 			return {
 				...state,
-				[qId]: cId
+				[qId]: {
+					cId,
+					isCorrect
+				}
 			};
 
 		case types.RESET_QUESTIONS:

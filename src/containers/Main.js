@@ -5,14 +5,14 @@ import {
 	Link
 } from 'react-router-dom';
 
-import { createQuestions, getResult } from '../actions';
+import { createQuestions, updateResult } from '../actions';
 // import * as actionCreators from './actionCreator
 import QuestionList from '../components/QuestionList';
 
 export class Main extends Component {
 	static propTypes = {
 		createQuestions: PropTypes.func.isRequired,
-		getResult: PropTypes.func.isRequired,
+		updateResult: PropTypes.func.isRequired,
 		questions: PropTypes.array.isRequired,
 		answers: PropTypes.object.isRequired
 	};
@@ -50,5 +50,5 @@ const mapStateToProps = (state) => {
 
 export default connect( mapStateToProps, {
 	createQuestions,
-	getResult
+	updateResult
 } )(Main);

@@ -12,7 +12,7 @@ module.exports = {
 		'webpack-dev-server/client?http://localhost:3000',
 		'webpack/hot/only-dev-server', // do not reload whole page
 		'react-hot-loader/patch',
-		path.join(__dirname, '../src/index.jsx')
+		path.join(__dirname, '../src/index.js')
 	],
 	output: {
 		path: path.join(__dirname, '../dist/'),
@@ -59,6 +59,13 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				loader: ExtractTextPlugin.extract('css-loader?modules=true&localIdentName=[local]!sass-loader')
+			},
+			{
+				test: /\.css$/,
+				use: [
+					'style-loader',
+					'css-loader'
+				]
 			}
 		]
 	}

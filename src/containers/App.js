@@ -7,6 +7,7 @@ import Main from './Main';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Result from '../components/Result';
+require('picnic');
 require('../styles/app.scss');
 
 const App = () =>

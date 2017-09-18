@@ -10,14 +10,18 @@ const middleware = routerMiddleware(history);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export function configureStore(initialState) {
+	const middlewares = [
+		middleware,
+		thunk,
+		process.env.NODE_ENV !== 'production' && logger,
+	].filter(Boolean);
+
+	const enhancers = composeEnhancers(applyMiddleware(...middlewares));
+
 	const store = createStore(
 		rootReducer,
 		initialState,
-		composeEnhancers(
-			applyMiddleware(middleware),
-			applyMiddleware(thunk),
-			applyMiddleware(logger),
-		)
+		enhancers
 	);
 
 	if(module.hot) {

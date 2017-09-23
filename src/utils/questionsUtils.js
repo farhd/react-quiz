@@ -7,7 +7,6 @@ export function generateQuestions() {
 			question: `Question ${num}`,
 			options: ['a', 'b', 'c'],
 			correctChoice: (Math.floor(Math.random() * 10)) % 3,
-			userChoice: null,
 		};
 	});
 }

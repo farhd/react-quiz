@@ -25,7 +25,7 @@ export function updateResult(answers) {
 export function answerAndCheck(qId, cId, isCorrect) {
 	return (dispatch, getState) => {
 		dispatch(answerQuestion(qId, cId, isCorrect));
-		return dispatch(updateResult(getState().answers));
+		dispatch(updateResult(getState().answers));
 	};
 }
 

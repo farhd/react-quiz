@@ -1,8 +1,9 @@
 import React from 'react';
+import * as styles from '../styles/app.scss';
 
 const Footer = () => {
 	return (
-		<footer className="t-center">
+		<footer className={`${styles['t-center']}`}>
 			<hr />
 			<h2>
 				<a

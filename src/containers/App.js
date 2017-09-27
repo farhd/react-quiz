@@ -7,14 +7,14 @@ import Main from './Main';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Result from '../components/Result';
-require('picnic');
-require('../styles/app.scss');
+import * as picnic from 'picnic';
+import * as styles from '../styles/app.scss';
 
 const App = () =>
 	<div>
 		<Header />
 
-		<div className="flex two-500 center t-center">
+		<div className={`${picnic.flex} ${picnic['two-500']} ${picnic.center} ${styles['t-center']}`}>
 			<Route exact path="/" component={Main} />
 			<Route path="/result" component={Result} />
 		</div>

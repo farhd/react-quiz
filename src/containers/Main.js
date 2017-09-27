@@ -5,6 +5,8 @@ import {
 	Link
 } from 'react-router-dom';
 
+import * as picnic from 'picnic';
+
 import { createQuestions, updateResult } from '../actions';
 // import * as actionCreators from './actionCreator
 import QuestionList from '../components/QuestionList';
@@ -34,7 +36,7 @@ export class Main extends Component {
 				<br />
 				<Link
 					to="/result"
-					className="button">
+					className={picnic.button}>
 					Submit
 				</Link>
 			</div>

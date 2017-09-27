@@ -33,7 +33,7 @@ module.exports = {
 			'process.env.NODE_ENV': JSON.stringify('development')
 		}),
 		new ExtractTextPlugin('[name]-dev.css'),
-		new OpenBrowserPlugin({ url: 'http://localhost:3000' })
+		new OpenBrowserPlugin({ url: 'http://localhost:3000' }),
 	],
 	module: {
 		rules: [
@@ -55,18 +55,24 @@ module.exports = {
 				options: {
 					presets: ['react', 'es2015', 'stage-2']
 				}
+      },
+      {
+				test: /\.css$/,
+				loaders: [
+					'style-loader?sourceMap',
+          'css-loader?modules=true&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'postcss-loader'
+				]
 			},
 			{
 				test: /\.scss$/,
-				loader: ExtractTextPlugin.extract('css-loader?modules=true&localIdentName=[local]!sass-loader')
-			},
-			{
-				test: /\.css$/,
-				use: [
+				loaders: [
 					'style-loader',
-					'css-loader'
+					'css-loader?modules=true&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+					'sass-loader?sourceMap',
+					'postcss-loader'
 				]
-			}
+			},
 		]
 	}
 };

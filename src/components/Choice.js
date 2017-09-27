@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import * as picnic from 'picnic';
+
 const Choice = ({ data, onChange }) => {
 	const { qId, i, label, active } = data;
 	const id = ''.concat(String(qId), String(i));
@@ -13,7 +15,7 @@ const Choice = ({ data, onChange }) => {
 				onChange={onChange}
 				type="radio"
 				checked={ active ? 'checked' : ''} />
-			<label htmlFor={id} className="checkable">
+			<label htmlFor={id} className={picnic.checkable}>
 				{label}
 			</label>
 		</span>

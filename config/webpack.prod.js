@@ -54,16 +54,26 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.scss$/,
-				loader: ExtractTextPlugin.extract('css-loader?modules=true&localIdentName=[local]!sass-loader')
+				test: /\.css$/,
+				use: ExtractTextPlugin.extract({
+          loaders: [
+            'style-loader?sourceMap',
+            'css-loader?modules=true&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+            'postcss-loader'
+          ]
+        })
 			},
 			{
-				test: /\.css$/,
-				use: [
-					'style-loader',
-					'css-loader'
-				]
-			}
+				test: /\.scss$/,
+				use: ExtractTextPlugin.extract({
+          loaders: [
+            'style-loader',
+            'css-loader?modules=true&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+            'sass-loader?sourceMap',
+            'postcss-loader'
+          ]
+        })
+			},
 		]
 	}
 };

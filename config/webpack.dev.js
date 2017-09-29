@@ -34,6 +34,12 @@ module.exports = {
 		}),
 		new ExtractTextPlugin('[name]-dev.css'),
 		new OpenBrowserPlugin({ url: 'http://localhost:3000' }),
+		// new webpack.ProvidePlugin({
+		// 	$: 'jquery',
+		// 	jQuery: 'jquery',
+		// 	'window.jQuery': 'jquery',
+		// 	Popper: ['popper.js', 'default'],
+		// })
 	],
 	module: {
 		rules: [
@@ -55,14 +61,24 @@ module.exports = {
 				options: {
 					presets: ['react', 'es2015', 'stage-2']
 				}
-      },
-      {
-				test: /\.css$/,
+			},
+			{
+        test: /\.css$/,
+        include: [/bootstrap/],
 				loaders: [
 					'style-loader?sourceMap',
-          'css-loader?modules=true&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'postcss-loader'
-				]
+					'css-loader?modules=false',
+					'postcss-loader'
+				],
+			},
+			{
+        test: /\.css$/,
+        exclude: [/bootstrap/],
+				loaders: [
+					'style-loader?sourceMap',
+					'css-loader?modules=true&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+					'postcss-loader'
+				],
 			},
 			{
 				test: /\.scss$/,
@@ -72,7 +88,43 @@ module.exports = {
 					'sass-loader?sourceMap',
 					'postcss-loader'
 				]
-			},
+      },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+      },
+      {
+        test: /\.(ttf|otf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?|(jpg|gif)$/,
+        loader: 'file-loader'
+      },
+			{
+				test: /\.(gif|png|jpe?g|svg)$/i,
+				loaders: [
+					'file-loader', {
+						loader: 'image-webpack-loader',
+						options: {
+							gifsicle: {
+								interlaced: false,
+							},
+							optipng: {
+								optimizationLevel: 7,
+							},
+							pngquant: {
+								quality: '65-90',
+								speed: 4
+							},
+							mozjpeg: {
+								progressive: true,
+								quality: 65
+							},
+							// Specifying webp here will create a WEBP version of your JPG/PNG images
+							webp: {
+								quality: 75
+							}
+						}
+					}
+				]
+			}
 		]
 	}
 };
